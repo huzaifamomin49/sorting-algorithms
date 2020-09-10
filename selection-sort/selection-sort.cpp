@@ -12,13 +12,15 @@ int main() {
         cin>>arr[i];
     }
     for(int i=0;i<n;i++){
+        int min_ind=i;
         for(int j=i;j<n;j++){
-            if(arr[i]>arr[j]){
-                int tmp=arr[i];
-                arr[i]=arr[j];
-                arr[j]=tmp;
+            if(arr[min_ind]>arr[j]){
+                min_ind=j;
             }
         }
+        int tmp=arr[i];
+        arr[i]=arr[min_ind];
+        arr[min_ind]=tmp;
     }
     for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
